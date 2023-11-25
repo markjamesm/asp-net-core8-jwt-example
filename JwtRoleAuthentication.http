@@ -1,6 +1,0 @@
-@JwtRoleAuthentication_HostAddress = http://localhost:5064
-
-GET {{JwtRoleAuthentication_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
