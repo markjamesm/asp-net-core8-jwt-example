@@ -2,4 +2,4 @@
 
 This repository is part of the following guide:
 
-[Securing an ASP .NET Core Web API using JWT and Role-based Authentication](https://markjames.dev/2023-11-25-jwt-authentication-asp-net/)
+[Securing an ASP .NET Core Web API using JWT and Role-based Authentication](https://markjames.dev/blog/jwt-authentication-asp-net/)
