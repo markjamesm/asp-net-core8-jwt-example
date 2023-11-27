@@ -1,4 +1,4 @@
-# Example Role-Based Authentication Using JWT Tokens in ASP .NET Core 8
+# Example Role-Based Authorization Using JWT Tokens in ASP .NET Core 8
 
 This repository is part of the following guide:
 
