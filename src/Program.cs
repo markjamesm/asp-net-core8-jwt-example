@@ -35,11 +35,11 @@ builder.Services.AddSwaggerGen(option =>
             {
                 Reference = new OpenApiReference
                 {
-                    Type=ReferenceType.SecurityScheme,
-                    Id="Bearer"
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "Bearer"
                 }
             },
-            new string[]{}
+            new string[] { }
         }
     });
 });
@@ -50,7 +50,8 @@ builder.Services.AddRouting(options => options.LowercaseUrls = true);
 
 // Add DB Contexts
 // Move the connection string to user secrets for release
-builder.Services.AddDbContext<ApplicationDbContext>(opt => opt.UseNpgsql("Host=localhost;Database=postgres;Username=postgres;Password=devpass"));
+builder.Services.AddDbContext<ApplicationDbContext>(opt =>
+    opt.UseNpgsql("Host=localhost;Database=postgres;Username=postgres;Password=devpass"));
 
 // Register our TokenService dependency
 builder.Services.AddScoped<TokenService, TokenService>();
@@ -83,10 +84,12 @@ var validIssuer = builder.Configuration.GetValue<string>("JwtTokenSettings:Valid
 var validAudience = builder.Configuration.GetValue<string>("JwtTokenSettings:ValidAudience");
 var symmetricSecurityKey = builder.Configuration.GetValue<string>("JwtTokenSettings:SymmetricSecurityKey");
 
-builder.Services.AddAuthentication(options => {
+builder.Services.AddAuthentication(options =>
+    {
         options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
         options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-        options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;})
+        options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+    })
     .AddJwtBearer(options =>
     {
         options.IncludeErrorDetails = true;
